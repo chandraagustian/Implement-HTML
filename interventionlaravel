@@ -1,0 +1,27 @@
+Installing Intervention Image
+
+$ composer require intervention/image
+
+See http://image.intervention.io/getting_started/installation
+
+Now when we have our extra packages installed we need to inform Laravel that we want access them in our application.
+
+Add to configuration file ../config/app.php
+
+ 'providers' => [
+
+    // ...
+      Intervention\Image\ImageServiceProvider::class,
+    // ...
+  ],
+
+'aliases' => [
+    // ...
+      'Image'     => Intervention\Image\Facades\Image::class,
+    // ...
+  ],
+
+OK. At this point we’re done with configuration.
+
+http://www.core45.com/using-database-to-store-images-in-laravel-5-1/
+Route::get('/profile', 'StaticController@profile')->name('profile');
